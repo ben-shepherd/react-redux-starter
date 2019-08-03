@@ -14,10 +14,6 @@ const isBeta = () => {
     return config.beta
 }
 
-const homepageSampleData = () => {
-    return config.homepage_sample_data
-}
-
 const appServices = {
     envProduction,
     envDevelopment,

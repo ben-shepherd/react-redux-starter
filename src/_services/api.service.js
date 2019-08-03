@@ -6,9 +6,6 @@ const initialHeader   = {
     'Content-Type': 'application/json'
 }
 
-export const APIService = async(url, method, body, headers = initialHeader) => APIAuthService(url, method, body, headers)
-export const fetch = (url, method, body, headers = initialHeader) => APIService(url, method, body, headers)
-
 /**
  * Fetch with Authorization token, and csrf token
  * @param {*} url 
@@ -16,7 +13,7 @@ export const fetch = (url, method, body, headers = initialHeader) => APIService(
  * @param {*} body 
  * @param {*} headers 
  */
-export const APIAuthService = async(url, method = 'post', body, headers = initialHeader) => {
+export const fetch = async(url, method = 'post', body, headers = initialHeader) => {
     return new Promise((resolve, reject) => {
         try {
             // Remove start foward slash
@@ -36,12 +33,12 @@ export const APIAuthService = async(url, method = 'post', body, headers = initia
             axios.post(postUrl, body, options).then(response => {
                 resolve(handleResponse(response, url))
             }).catch(err => {
-                console.log('APIAuthService Error (1)', err, {url, method})
+                console.log('API fetch error (1)', err, {url, method})
                 reject(err)
             })
         }
         catch (err) {
-            console.log('APIAuthService Error (2)', err, {url, method})
+            console.log('API fetch error (2)', err, {url, method})
             reject(err)
         }
     })
@@ -69,15 +66,13 @@ const handleResponse = (response, url = null) => {
 
     }
     catch (err) {
-        console.log('handleResponse Error', err, {response})
+        console.log('API fetch error (3)', err, {response})
     }
 }
 
 const apiService = {
     fetch,
     initialHeader,
-    APIService,
-    APIAuthService,    
 }
 
 export default apiService

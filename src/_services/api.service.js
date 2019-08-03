@@ -74,8 +74,6 @@ const handleResponse = (response, url = null) => {
 }
 
 const apiService = {
-    setApiVersion,
-    getApiVersion,
     fetch,
     initialHeader,
     APIService,

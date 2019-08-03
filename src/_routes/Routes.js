@@ -1,5 +1,5 @@
 import React from 'react'
-import Homepage from './components/homepage/index'
+import Homepage from '../components/homepage/index'
 import { Route, withRouter, Switch } from 'react-router-dom'
 import GuestRoute from './GuestRoute'
 import PrivateRoute from './PrivateRoute'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect, Route } from 'react-router-dom'
-import { loggedIn } from '../../_services/auth.service'
+import { loggedIn } from '../_services/auth.service'
 
 const PrivateRoute = ({ component: Component, ...rest}) => {
     if(loggedIn()) {

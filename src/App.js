@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './App.css';
 
 // Redux
@@ -8,28 +7,13 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 // Components
-import Routes from './routes'
+import Routes from './_routes/Routes'
 
 function App() {
   return (
       <Provider store={store}>
         <BrowserRouter>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
+          <Routes />
         </BrowserRouter>
       </Provider>
   );

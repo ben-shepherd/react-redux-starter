@@ -18,7 +18,6 @@ const appServices = {
     envProduction,
     envDevelopment,
     isBeta,
-    homepageSampleData,
 }
 
 export default appServices
